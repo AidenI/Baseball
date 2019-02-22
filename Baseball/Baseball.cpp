@@ -1,61 +1,104 @@
 #include <iostream>
+#include <iomanip>
+#include <string>
 #include <time.h>
+#include <sstream>
 
 using namespace std;
 
-class User
-{
-public:	
-	User(){}
-	User(const unsigned int _arrNum[]) : arrNum(_arrNum){}
-	int GetNum() { return *arrNum; }	
+void introMSG();
+string inputNum();
 
-private:	
-	const unsigned int* arrNum;
-	unsigned int askNum[3];
-};
-
-class Computer : public User
+class Computer
 {
 public:
-	Computer(const unsigned int _arrNum[]) : arrComNum(_arrNum){}
+	string GetNum() { return m_strComNum; }	
 
-	const int* GetRandNum()
+	void SetRandNum()
 	{
-		int num[3] = {0, };
+		int arr[3];
+		stringstream ss;
 		srand((unsigned)time(NULL));
 
 		for (int i = 0; i < 3; i++)
 		{	
-			num[i] = rand() % 10;
+			arr[i] = rand() % 10;
+		}	
+		for (int i = 0; i < 3; i++)
+		{
+			ss << arr[i];
 		}
-
-		return num;
+		m_strComNum = ss.str();
 	}
-
 private:
-	const unsigned int* arrComNum;
+	string m_strComNum;
 };
 
 int main()
 {
-	unsigned int arr[3];	
+	string arrUser;
+	
+	int i = 0;
+	
+	introMSG();
+	arrUser = inputNum();	
+
+	Computer com;
+	com.SetRandNum();
+	string a = com.GetNum();
+
+	return 0;
+}
+
+void introMSG()
+{
+	string strHead = "Play BaseBall Game!";
+
+	cout << setw(strHead.size()+3) << setfill('*') << " " << endl;
+	cout << '*' << strHead << '*' << endl;
+	cout << setw(strHead.size()+3) << setfill('*') << " " << endl;
+}
+
+string inputNum()
+{
+	string str;
+	bool bInputFlag = false;
+
+	while (bInputFlag == false)
+	{
+		cout << "3자리 수를 입력하세요 : ";
+		cin >> str;
+		if(str.size() == 3)
+			bInputFlag = true;
+	}
+
+	return str;
+}
+
+void strCompare(string userInput, string comNum)
+{
+	int sCount = 0;
+	int bCount = 0;
+	
+	sCount = calCount(userInput, comNum);
+
 	for(int i = 0; i < 3; i++)
 	{
-		cin >> arr[i];
-		/*
-		if(arr[i] > 9)
+		for(int j = 0; j <3; j++)
 		{
-			cout << "1~10숫자 입력" << endl;
-			return 1;
-		}*/
+			if(userInput.at(i) == comNum.at(i))
+				sCount++;
+		}
 	}
-	Computer c(arr);
-	const int* b = new int[3];
-	b =	c.GetRandNum();
+}
 
-	cout << b[0] << endl;
-	cout << b[1] << endl;
-	cout << b[2] << endl;
-	return 0;
+int calCount(string userInput, string comNum)
+{
+	int count = 0;
+	for(int i = 0; i < 3; i++)
+		{
+			if(userInput.at(i) == comNum.at(i))
+				count++;
+		}
+	return count;
 }
