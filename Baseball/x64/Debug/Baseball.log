@@ -1,10 +1,11 @@
-﻿빌드 시작: 2019-02-22 오후 3:50:11
+﻿빌드 시작: 2019-02-25 오후 2:43:47
      1>2 노드의 "C:\Users\pc\documents\visual studio 2010\Projects\Baseball\Baseball\Baseball.vcxproj" 프로젝트(build 대상)입니다.
      1>InitializeBuildStatus:
          "x64\Debug\Baseball.unsuccessfulbuild"에 연결(touching)하고 있습니다.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt Baseball.cpp
          Baseball.cpp
+     1>c:\users\pc\documents\visual studio 2010\projects\baseball\baseball\baseball.cpp(130): warning C4700: 초기화되지 않은 'value' 지역 변수를 사용했습니다.
        ManifestResourceCompile:
          모든 출력이 최신 상태입니다.
        Link:
@@ -24,4 +25,4 @@
 
 빌드했습니다.
 
-경과 시간: 00:00:02.07
+경과 시간: 00:00:01.88
