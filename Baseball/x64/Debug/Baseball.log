@@ -1,28 +1,28 @@
-﻿빌드 시작: 2019-02-25 오후 2:43:47
-     1>2 노드의 "C:\Users\pc\documents\visual studio 2010\Projects\Baseball\Baseball\Baseball.vcxproj" 프로젝트(build 대상)입니다.
+﻿빌드 시작: 2019-02-27 오전 11:20:55
+     1>2 노드의 "C:\Users\pc\Documents\Visual Studio 2010\Projects\Baseball\Baseball\Baseball.vcxproj" 프로젝트(build 대상)입니다.
      1>InitializeBuildStatus:
-         "x64\Debug\Baseball.unsuccessfulbuild"에 연결(touching)하고 있습니다.
+         "AlwaysCreate"이(가) 지정되었기 때문에 "x64\Debug\Baseball.unsuccessfulbuild"을(를) 만들고 있습니다.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt Baseball.cpp
          Baseball.cpp
-     1>c:\users\pc\documents\visual studio 2010\projects\baseball\baseball\baseball.cpp(130): warning C4700: 초기화되지 않은 'value' 지역 변수를 사용했습니다.
+     1>c:\users\pc\documents\visual studio 2010\projects\baseball\baseball\baseball.cpp(110): warning C4715: 'compare' : 모든 제어 경로에서 값을 반환하지는 않습니다.
        ManifestResourceCompile:
          모든 출력이 최신 상태입니다.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\pc\documents\visual studio 2010\Projects\Baseball\x64\Debug\Baseball.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Debug\Baseball.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\pc\documents\visual studio 2010\Projects\Baseball\x64\Debug\Baseball.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\pc\documents\visual studio 2010\Projects\Baseball\x64\Debug\Baseball.lib" /MACHINE:X64 x64\Debug\Baseball.exe.embed.manifest.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\pc\Documents\Visual Studio 2010\Projects\Baseball\x64\Debug\Baseball.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Debug\Baseball.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\pc\Documents\Visual Studio 2010\Projects\Baseball\x64\Debug\Baseball.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\pc\Documents\Visual Studio 2010\Projects\Baseball\x64\Debug\Baseball.lib" /MACHINE:X64 x64\Debug\Baseball.exe.embed.manifest.res
          x64\Debug\Baseball.obj
-         Baseball.vcxproj -> C:\Users\pc\documents\visual studio 2010\Projects\Baseball\x64\Debug\Baseball.exe
+         Baseball.vcxproj -> C:\Users\pc\Documents\Visual Studio 2010\Projects\Baseball\x64\Debug\Baseball.exe
        Manifest:
          c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"x64\Debug\Baseball.exe.embed.manifest" /manifest x64\Debug\Baseball.exe.intermediate.manifest
          모든 출력이 최신 상태입니다.
        LinkEmbedManifest:
          모든 출력이 최신 상태입니다.
-         Baseball.vcxproj -> C:\Users\pc\documents\visual studio 2010\Projects\Baseball\x64\Debug\Baseball.exe
+         Baseball.vcxproj -> C:\Users\pc\Documents\Visual Studio 2010\Projects\Baseball\x64\Debug\Baseball.exe
        FinalizeBuildStatus:
          "x64\Debug\Baseball.unsuccessfulbuild" 파일을 삭제하고 있습니다.
          "x64\Debug\Baseball.lastbuildstate"에 연결(touching)하고 있습니다.
-     1>"C:\Users\pc\documents\visual studio 2010\Projects\Baseball\Baseball\Baseball.vcxproj" 프로젝트를 빌드했습니다(build 대상).
+     1>"C:\Users\pc\Documents\Visual Studio 2010\Projects\Baseball\Baseball\Baseball.vcxproj" 프로젝트를 빌드했습니다(build 대상).
 
 빌드했습니다.
 
-경과 시간: 00:00:01.88
+경과 시간: 00:00:01.84

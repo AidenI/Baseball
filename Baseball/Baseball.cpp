@@ -12,17 +12,14 @@ typedef struct
 	int bCount;
 }score_value;
 
-const int MAX_SIZE = 9;
+const int MAX_SIZE = 10;
 const int CARD_SIZE = 3;
 
 void introMSG();
 string inputNum();
-bool strCompare(string userInput, string comNum);
-int calcBallScore(string userInput, string comNum, int i);
-bool resultOut(int sCount, int bCount);
-void compare(string userInput, string comNum);
-score_value calcCount(int i, int j, score_value foo);
-score_value calcCompare(string userInput, string comNum, int i, int j, score_value foo);
+bool compare(string userInput, string comNum);
+score_value calcCount(int i, int j, score_value* foo);
+score_value calcCompare(string userInput, string comNum, int i, int j, score_value* foo);
 
 class Computer
 {
@@ -30,20 +27,20 @@ public:
 	string GetNum() { return m_strComNum; }	
 
 	void SetRandNum() {
-		int card[MAX_SIZE];
+		int card[MAX_SIZE] = {0,};
 		stringstream ss;
 		srand((unsigned)time(NULL));
 			
 		shuffleCard(card);
 		for (int i = 0; i < CARD_SIZE; i++)	{
-			ss << card[i];
+			ss << card[i+1];
 		}
 		m_strComNum = ss.str();
 	}
 
-	int shuffleCard(int* card)
+	void shuffleCard(int* card)
 	{
-		for (int i = 1; i < 10; i++)
+		for (int i = 1; i < MAX_SIZE; i++)
 			card[i] = i;
 
 		for (int i = 9; i > 1; --i)
@@ -93,78 +90,42 @@ string inputNum() {
 	}
 	return str;
 }
-//
-//bool strCompare(string userInput, string comNum) {
-//	int sCount = 0;
-//	int bCount = 0;
-//	bool bFlag = false;
-//
-//	for(int i = 0; i < 3; i++) {		
-//		if(userInput.at(i) == comNum.at(i))
-//		{
-//			sCount++;		
-//			bCount += calcBallScore(userInput, comNum, i);	
-//		}
-//		else
-//			bCount += calcBallScore(userInput, comNum, i);	
-//	}
-//	bFlag = resultOut(sCount, bCount);
-//
-//	return bFlag;
-//}
-//
-//int calcBallScore(string userInput, string comNum, int i) {
-//	int ballScore = 0;
-//	if(i > 3)
-//		return ballScore;
-//	for(int j = 0; j < 3; j++) {
-//			if(userInput.at(i) == comNum.at(j))
-//				ballScore++;
-//		}
-//	return ballScore;
-//}
-//
-//bool resultOut(int sCount, int bCount) {
-//	bool bFlag = false;
-//	cout << sCount << " 스트라이크 " << bCount << " 볼입니다." << endl;
-//	if(sCount == 3 && bCount == 0)
-//		bFlag = true;
-//
-//	return bFlag;
-//}
 
-void compare(string userInput, string comNum) // 732, 771
+bool compare(string userInput, string comNum) 
 {
 	score_value value = {0, };
 	int i = 0;
 	int j = 0;
-	for(i = 0; i < MAX_SIZE; i++)
+	bool bResultFlag = true;
+	for(i = 0; i < CARD_SIZE; i++)
 	{
-		for(j = 0; j < MAX_SIZE; j++)
+		for(j = 0; j < CARD_SIZE; j++)
 		{
-			value = calcCompare(userInput, comNum, i, j, value);
+			value = calcCompare(userInput, comNum, i, j, &value);
 		}
 	}
 	cout << value.sCount << " 스트라이크 " << value.bCount << " 볼입니다." << endl;
+	if(value.sCount == 3 && value.bCount == 0)
+		return bResultFlag;
 }
 
 
-score_value calcCount(int i, int j, score_value foo)
+score_value calcCount(int i, int j, score_value* foo)
 {	
 	if(i == j)
-		foo.sCount++;
+		foo->sCount++;
 	else
-		foo.bCount++;
+		foo->bCount++;
 
-	return foo;
+	return *foo;
 }
 
-score_value calcCompare(string userInput, string comNum, int i, int j, score_value foo)
+score_value calcCompare(string userInput, string comNum, int i, int j, score_value* foo)
 {
 	if(userInput[i] == comNum[j])
 	{
-		foo = calcCount(i, j, foo);
+		*foo = calcCount(i, j, foo);
 	}	
 
-	return foo;
+	return *foo;
 }
